@@ -12,7 +12,7 @@ class API {
     var products = <Product>[];
     // ignore: unnecessary_string_interpolations, prefer_adjacent_string_concatenation
     var response = await client.get(Uri.parse('$endpoint' + 'products.json'));
-    var data = json.decode(response.body) as List<dynamic>;
+    var data = json.decode(response.body);
     for (var product in data) {
       products.add(Product.fromJson(product));
     }

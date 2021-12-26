@@ -7,10 +7,10 @@ import 'package:flutter_shop/helpers/dependency_assembly.dart';
 class ProductListModel extends BaseModel {
   API api = dependencyAssembler<API>();
 
-  late List<Product> _products;
+  List<Product>? _products;
 
   List<Product> get products {
-    return _products;
+    return _products!;
   }
 
   Future getProducts() async {

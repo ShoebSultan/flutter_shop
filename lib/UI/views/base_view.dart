@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_shop/core/viewmodels/base_model.dart';
+import 'package:flutter_shop/helpers/dependency_assembly.dart';
 import 'package:provider/provider.dart';
 
 class BaseView<T extends BaseModel> extends StatefulWidget {
@@ -14,7 +15,8 @@ class BaseView<T extends BaseModel> extends StatefulWidget {
 }
 
 class _BaseViewState<T extends BaseModel> extends State<BaseView<T>> {
-  late T model;
+  // late T model;
+  T model = dependencyAssembler<T>();
 
   @override
   void initState() {

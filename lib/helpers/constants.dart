@@ -7,5 +7,5 @@ class ViewTitle {
 
 class URL {
   static const ProductList =
-      'https://flutter-shop-e74d6-default-rtdb.firebaseio.com/products.json';
+      'https://flutter-shop-e74d6-default-rtdb.firebaseio.com/';
 }

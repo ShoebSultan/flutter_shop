@@ -27,11 +27,11 @@ class CartModel extends BaseModel {
     cartSummary = {};
     for (var product in cart) {
       if (!cartSummary.keys.contains(product.name)) {
-        cartSummary[product.name] = [product];
+        cartSummary[product.name!] = [product];
       } else {
         var currentProducts = cartSummary[product.name];
         currentProducts!.add(product);
-        cartSummary[product.name] = currentProducts;
+        cartSummary[product.name!] = currentProducts;
       }
     }
     return cartSummary;
@@ -50,7 +50,7 @@ class CartModel extends BaseModel {
   int get totalCost {
     var cost = 0;
     for (var productName in cartSummary.keys) {
-      cost += (cartSummary[productName]!.first.price *
+      cost += (cartSummary[productName]!.first.price! *
           cartSummary[productName]!.length);
     }
     return cost;

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shop/UI/app_theme.dart';
 import 'package:flutter_shop/UI/views/product_list_view.dart';
+import 'package:flutter_shop/helpers/dependency_assembly.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  setupDependencyAssembler();
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);

@@ -12,7 +12,7 @@ class CartItemCard extends StatelessWidget {
 
   List<Widget> _getProductDetails(BuildContext context) {
     return [
-      Text(product.name,
+      Text(product.name!,
           maxLines: 2, style: Theme.of(context).textTheme.subtitle2),
       Text('\$${product.price.toString()}.00',
           style: Theme.of(context).textTheme.subtitle1),
@@ -46,7 +46,7 @@ class CartItemCard extends StatelessWidget {
                 ),
               ),
               const VerticalDivider(),
-              ProductImage(product.imageUrl),
+              ProductImage(product.imageUrl!),
             ],
           ),
         ),

@@ -22,6 +22,7 @@ class ProductList extends StatelessWidget {
                   child: ProductCard(products[index]),
                   onTap: () {
                     // TODO 15: Call Add To Cart
+                    cartModel.addToCart(products[index]);
                   }),
               padding: const EdgeInsets.all(10.0),
             ),
