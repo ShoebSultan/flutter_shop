@@ -28,7 +28,7 @@ class ProductListView extends StatelessWidget {
 
         // TODO 16: Call get CartSize
         cartModel.cartSize != 0
-            ? CartCountBadge(cartModel.cartSize)
+            ? CartCountBadge(key, cartModel.cartSize)
             : Container()
       ],
     );
@@ -44,11 +44,11 @@ class ProductListView extends StatelessWidget {
         builder: (context, model, child) => Scaffold(
           backgroundColor: Colors.grey.shade50,
           appBar: AppBar(
-            title: Text(ViewTitle.ProductList),
+            title: const Text(ViewTitle.ProductList),
             actions: <Widget>[_buildCartButton(context, cartModel)],
           ),
           body: model.state == ViewState.busy
-              ? Center(child: CircularProgressIndicator())
+              ? const Center(child: CircularProgressIndicator())
               : ProductList(model.products, cartModel),
         ),
       ),

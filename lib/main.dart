@@ -17,8 +17,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Material App',
       theme: AppTheme.data,
-      home: const Scaffold(
-        body: ProductListView(),
+      home: Scaffold(
+        body: ProductListView(
+          key: key,
+        ),
       ),
     );
   }

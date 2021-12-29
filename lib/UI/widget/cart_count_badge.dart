@@ -3,7 +3,10 @@
 import 'package:flutter/material.dart';
 
 class CartCountBadge extends StatelessWidget {
-  const CartCountBadge(this.cartSize);
+  const CartCountBadge(
+    Key? key,
+    this.cartSize,
+  ) : super(key: key);
 
   final int cartSize;
 
@@ -29,6 +32,7 @@ class CartCountBadge extends StatelessWidget {
             fontSize: 14,
           ),
           textAlign: TextAlign.center,
+          key: const ValueKey("cartSize"),
         ),
       ),
     );
