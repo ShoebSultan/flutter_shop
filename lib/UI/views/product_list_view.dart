@@ -8,11 +8,11 @@ import 'package:flutter_shop/core/viewmodels/cart_model.dart';
 import 'package:flutter_shop/core/viewmodels/product_list_model.dart';
 import 'package:flutter_shop/helpers/constants.dart';
 
+// ignore: use_key_in_widget_constructors
 class ProductListView extends StatelessWidget {
-  const ProductListView({Key? key}) : super(key: key);
-
   Widget _buildCartButton(BuildContext context, CartModel cartModel) {
     return Stack(
+      key: const ValueKey("widget"),
       children: [
         IconButton(
           onPressed: () {
@@ -28,7 +28,7 @@ class ProductListView extends StatelessWidget {
 
         // TODO 16: Call get CartSize
         cartModel.cartSize != 0
-            ? CartCountBadge(key, cartModel.cartSize)
+            ? CartCountBadge(cartModel.cartSize)
             : Container()
       ],
     );
@@ -42,10 +42,16 @@ class ProductListView extends StatelessWidget {
       builder: (context, cartModel, child) => BaseView<ProductListModel>(
         onModelReady: (model) => model.getProducts(),
         builder: (context, model, child) => Scaffold(
+          key: ValueKey("widget"),
           backgroundColor: Colors.grey.shade50,
           appBar: AppBar(
             title: const Text(ViewTitle.ProductList),
-            actions: <Widget>[_buildCartButton(context, cartModel)],
+            actions: <Widget>[
+              _buildCartButton(
+                context,
+                cartModel,
+              )
+            ],
           ),
           body: model.state == ViewState.busy
               ? const Center(child: CircularProgressIndicator())

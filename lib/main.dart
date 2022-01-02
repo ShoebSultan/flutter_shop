@@ -18,9 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Material App',
       theme: AppTheme.data,
       home: Scaffold(
-        body: ProductListView(
-          key: key,
-        ),
+        body: ProductListView(),
       ),
     );
   }

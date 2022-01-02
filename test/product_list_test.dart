@@ -35,9 +35,9 @@ void main() {
   productListViewModel.api = MockAPI();
 
   // TODO 6: Inject Cart View Model
+  var carViewModel = dependencyAssembler<CartModel>();
 
   // TODO 4: Write Product List Page Test Cases
-  var carViewModel = dependencyAssembler<CartModel>();
 
   group('Given product list page laods', () {
     test("Page should load a list of products from firebase", () async {
