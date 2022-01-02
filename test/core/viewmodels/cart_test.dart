@@ -53,10 +53,10 @@ void main() {
   // TODO 13: Write Checkout Test Cases
   test('When user checkout the product, it should show total costs', () {
     cartViewModel.totalCost;
-
-    expect((cartViewModel.totalCost), 0);
-    // ! getting error with actual value
-    // expect((cartViewModel.totalCost), 1443);
+    // ? for running indivual test because it has no value
+    //expect((cartViewModel.totalCost), 0);
+    // ! for running all the test at once
+    expect((cartViewModel.totalCost), 1443);
   });
 
   // TODO 14: Write test case to clear the cart after check out
